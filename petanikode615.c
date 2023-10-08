@@ -18,6 +18,8 @@ void main(){
 
     printf("a-- = %d\n", a);
 
+    //increment dan decrment untuk tambah atau kurang 1
+
     // decrement a
     --a;
 
