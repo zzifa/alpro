@@ -5,3 +5,5 @@ int main(){
 
     return 0;
 }
+
+//putchar untuk satu karakter aja
