@@ -30,7 +30,7 @@ int main() {
 
     integral = integral_trapezoidal(a, b, n);
 
-    printf("Hasil integral dari 5x + 2 (numerik) = %.3f\n", integral);
+    printf("Hasil integral dari 5x + 2 (numerik) = %lf\n", integral);
     printf("Hasil integral dari 5x + 2 (analitik) = 14\n");
 
     return 0;
