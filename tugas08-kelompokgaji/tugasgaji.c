@@ -1,14 +1,21 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-int golongan, jam, gaji, lembur, upahlembur, gajilembur;
+int golongan, gaji2, jam, gaji, lembur, upahlembur, gajilembur;
 char nama[25];
-int hitunglembur(int lembur, int ulembur){
+int hitunglembur(int gaji, int lembur, int ulembur){
+    if (jam>150){
+        gaji2 = gaji*1.5;
+    }
+    else{
+        gaji2=gaji;
+    }
     upahlembur = ulembur*lembur;
     gajilembur = gaji + upahlembur;
 }
 void displaygaji(){
-    hitunglembur(lembur, upahlembur);
-    printf("Gaji Pokok Rp.%d\n", gaji);
+    hitunglembur(gaji, lembur, upahlembur);
+    printf("Gaji Pokok Rp.%d\n", gaji2);
     printf("Gaji Lembur Rp.%d\n", upahlembur);
     printf("Maka total gaji yang anda dapatkan adalah Rp.%d\n", gajilembur);
 }
@@ -26,12 +33,10 @@ int main(){
     scanf("%d", &golongan);
     printf("Masukkan jam kerja karyawan: ");    
     scanf("%d", &jam);
-    if (jam>150)
-    {
+    if (jam>150){
         lembur = jam - 150;
     }
-    switch (golongan)
-    {
+    switch (golongan){
     case 1:
         gaji = 500000;
         upahlembur = 5000;
@@ -53,12 +58,13 @@ int main(){
         upahlembur = 1000;
         break;
     default:
-    printf("Golongan yang anda masukkan tidak valid");
+        printf("Golongan yang anda masukkan tidak valid\n");
+        exit(0);//keluar
         break;
     }
     printf("\n");
     printf("Nama Karyawan : %s\n",nama);
     printf("Golongan : %d\n", golongan);
     printf("Jam Kerja : %d jam\n", jam);
-    displaygaji(jam,upahlembur);
+    displaygaji();
 }
