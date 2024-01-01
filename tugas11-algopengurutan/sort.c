@@ -15,10 +15,8 @@ int main(){
     printf("Sebelum pengurutan:\n");
     tampilkanArray(A, MAX);
 
-    for (j = 0; j < MAX-1; j++)
-    {
-        for (k = MAX-1; k>=(j+1); k--)
-        {
+    for (j = 0; j < MAX-1; j++){
+        for (k = MAX-1; k>=(j+1); k--){
             if (A[k]<A[k-1])
             {
                 temp = A[k];
@@ -27,7 +25,7 @@ int main(){
             }
             
         }
-        
+         
     }
     printf("\n");
     printf("Setelah pengurutan:\n");
